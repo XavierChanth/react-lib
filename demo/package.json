@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.13.1",
+    "react": "file:../node_modules/react",
     "react-dom": "^16.13.1",
     "react-lib": "file:..",
     "react-scripts": "3.4.1"
