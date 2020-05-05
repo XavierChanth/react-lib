@@ -3,4 +3,5 @@ demo
 .babelrc
 rollup.config.js
 node_modules
-dist/bundle.js
+.npmignore
+.gitignore
