@@ -1,11 +1,11 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
-import uglify from 'rollup-plugin-uglify';
+import minify from 'rollup-plugin-minify';
 
 export default {
   input: 'src/index.js',
   output: {
-    file: 'index.js',
+    file: 'dist/bundle.js',
     format: 'cjs'
   },
   external: [
@@ -17,6 +17,6 @@ export default {
     babel({
       exclude: 'node_modules/**'
     }),
-    uglify()
+    minify({cjs: 'dist/bundle.min.js'})
   ]
 }
