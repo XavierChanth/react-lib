@@ -36,7 +36,6 @@
     "react-dom": "^16.13.1",
     "react-jss": "^10.1.1"
   },
-
   "peerDependencies": {
     "react": "^16.13.1"
   }
