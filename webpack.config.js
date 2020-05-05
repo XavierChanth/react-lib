@@ -3,36 +3,18 @@ var path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: 'index.js',
-    libraryTarget: 'commonjs2'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js'
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /(node_modules|bower_components|build)/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['env']
-          }
-        }
-      }, {
-        test: /\.*css$/,
-        loader: 'style-loader'
-      }, {
-        test: /\.*css$/,
-        loader: 'css-loader',
-        query: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
+          loader: "babel-loader"
         }
       }
     ]
-  },
-  externals: {
-    'react': 'commonjs react'
   }
 };
