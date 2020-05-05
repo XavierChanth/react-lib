@@ -4,8 +4,8 @@
   "description": "React component library for npm rebuilding with webpack",
   "main": "./src/index.js",
   "scripts": {
-    "start": "webpack --watch",
-    "build": "webpack",
+    "start": "webpack --watch --mode production",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,13 +24,10 @@
   },
   "homepage": "https://github.com/XavierChanth/react-lib#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "extract-text-webpack-plugin": "^3.0.2",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
