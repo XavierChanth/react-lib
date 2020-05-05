@@ -4,7 +4,7 @@ import babel from 'rollup-plugin-babel';
 export default {
   input: 'src/index.js',
   output: {
-    file: './index.js',
+    file: 'bundle/index.js',
     format: 'cjs'
   },
   external: [

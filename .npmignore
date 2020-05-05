@@ -1,4 +1,6 @@
 src
 demo
 .babelrc
-webpack.config.js
+rollup.config.js
+bundle
+node_modules
