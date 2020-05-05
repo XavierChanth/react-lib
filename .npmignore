@@ -2,5 +2,5 @@ src
 demo
 .babelrc
 rollup.config.js
-bundle
 node_modules
+dist/bundle.js
