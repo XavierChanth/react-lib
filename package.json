@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/XavierChanth/react-lib/issues"
   },
-  "homepage": "https://github.com/XavierChanth/react-lib#readme"
+  "homepage": "https://github.com/XavierChanth/react-lib#readme",
+  "devDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-jss": "^10.1.1"
+  }
 }
