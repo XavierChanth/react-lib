@@ -4,7 +4,7 @@
   "description": "React component library for npm rebuilding with webpack",
   "main": "./dist/index.js",
   "scripts": {
-    "start": "webpack --watch --mode development",
+    "start": "webpack --watch --mode production",
     "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
