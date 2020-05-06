@@ -2,25 +2,35 @@ import React from 'react'
 
 // default themes
 const darkTheme = {
+  accent: '#fff',
+  accentHover: '#ddd',
   background: '#050505',
-  element: '#020887',
   primary: '#2B50AA',
   secondary: '#1B998B',
-  tertiary: '#FCD0A1',
-  danger: '#EA526F'
+  info: '#F0544F',
+  danger: '#EA324F'
 }
 
 const ThemeContext = React.createContext({})
 
-const DarkThemeProvider = ({ children }) => {
-  return (
-    <ThemeContext.Provider value={darkTheme}>{children}</ThemeContext.Provider>
-  )
+const DarkThemeProvider = ({ children, jssOverride }) => {
+  overrideCss(darkTheme, jssOverride)
+  return <ThemeContext.Provider value={darkTheme}>{children}</ThemeContext.Provider>
 }
 
-const CustomThemeProvider = ({ children, theme }) => {
+const CustomThemeProvider = ({ children, theme, jssOverride }) => {
+  overrideCss(theme, jssOverride)
   return <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
 }
 
-export { CustomThemeProvider, DarkThemeProvider }
+const isColor = (string) => {
+  return darkTheme.hasOwnProperty(string);
+}
+
+const overrideCss = (theme, jss) => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = theme.background;
+  // TODO override document with JSS somehow
+}
+
+export { CustomThemeProvider, DarkThemeProvider, isColor }
 export default ThemeContext
