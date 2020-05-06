@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { createUseStyles } from 'react-jss'
-import ThemeContext, { isColor } from './themecontext'
+import ThemeContext, { isColor } from '../theme'
 
 const Button = ({ children, onClick, ...args }) => {
   const theme = useContext(ThemeContext)
