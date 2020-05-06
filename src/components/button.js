@@ -1,7 +1,19 @@
 import React, { useContext } from 'react'
 import { createUseStyles } from 'react-jss'
 import ThemeContext, { isColor } from '../theme'
-
+/*
+  Button
+  props:
+    colors: (boolean tags)
+      primary
+      secondary
+      info
+      danger
+    positional: (connecting buttons into a button bar)
+      left
+      middle
+      right
+      */
 const Button = ({ children, onClick, ...args }) => {
   const theme = useContext(ThemeContext)
 
