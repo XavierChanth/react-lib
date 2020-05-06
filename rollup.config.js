@@ -15,6 +15,6 @@ export default {
   plugins: [
     resolve(),
     babel({ exclude: 'node_modules/**' }),
-    cleanup({ comments: 'none' })
+    cleanup()
   ]
 }

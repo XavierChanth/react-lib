@@ -18,32 +18,28 @@ var darkTheme = {
   danger: '#EA324F'
 };
 var ThemeContext = React__default.createContext({});
-
 var DarkThemeProvider = function DarkThemeProvider(_ref) {
   var children = _ref.children,
       jssOverride = _ref.jssOverride;
   overrideCss(darkTheme);
-  return /*#__PURE__*/React__default.createElement(ThemeContext.Provider, {
+  return React__default.createElement(ThemeContext.Provider, {
     value: darkTheme
   }, children);
 };
-
 var CustomThemeProvider = function CustomThemeProvider(_ref2) {
   var children = _ref2.children,
       theme = _ref2.theme,
       jssOverride = _ref2.jssOverride;
   overrideCss(theme);
-  return /*#__PURE__*/React__default.createElement(ThemeContext.Provider, {
+  return React__default.createElement(ThemeContext.Provider, {
     value: theme
   }, children);
 };
-
 var isColor = function isColor(string) {
   return darkTheme.hasOwnProperty(string);
 };
-
 var overrideCss = function overrideCss(theme, jss) {
-  document.getElementsByTagName("body")[0].style.backgroundColor = theme.background; // TODO override document with JSS somehow
+  document.getElementsByTagName("body")[0].style.backgroundColor = theme.background;
 };
 
 function _objectWithoutPropertiesLoose(source, excluded) {
@@ -86,16 +82,13 @@ var Button = function Button(_ref) {
   var children = _ref.children,
       onClick = _ref.onClick,
       args = _objectWithoutProperties(_ref, ["children", "onClick"]);
-
   var theme = React.useContext(ThemeContext);
   var color;
-
   for (var arg in args) {
     if (isColor(arg)) {
       color = theme[arg];
     }
   }
-
   if (!color) color = theme.primary;
   var classes = reactJss.createUseStyles({
     button: {
@@ -109,7 +102,7 @@ var Button = function Button(_ref) {
       }
     }
   })();
-  return /*#__PURE__*/React__default.createElement("button", {
+  return React__default.createElement("button", {
     className: classes.button,
     onClick: onClick
   }, children);
