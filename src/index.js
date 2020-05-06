@@ -1,6 +1,9 @@
+//theme
 export {
   default as ThemeContext,
   CustomThemeProvider,
   DarkThemeProvider
 } from './theme'
-export { default as Button } from './components/button'
+
+//buttons
+export { default as ButtonBar, Button } from './components/buttonbar'
