@@ -2,5 +2,5 @@ export {
   default as ThemeContext,
   CustomThemeProvider,
   DarkThemeProvider
-} from './components/themecontext'
+} from './theme'
 export { default as Button } from './components/button'
