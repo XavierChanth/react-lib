@@ -1,9 +1,13 @@
 import React from 'react';
-import { Button } from 'react-lib'
+import { ButtonBar, Button } from 'react-lib'
 
 function App() {
   return (
-    <Button info onClick={() => {alert("hi")}}>Hi</Button>
+    <ButtonBar>
+      <Button success onClick={() => {alert("hi")}}>Submit</Button>
+      <Button warning onClick={() => {alert("hi")}}>Return</Button>
+      <Button danger onClick={() => {alert("hi")}}>Cancel</Button>
+    </ButtonBar>
   );
 }
 
