@@ -30,10 +30,12 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@emotion/core": "^10.0.28",
+    "@rollup/plugin-commonjs": "^11.1.0",
     "babel-loader": "^8.1.0",
+    "babel-plugin-emotion": "^10.0.33",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-jss": "^10.1.1",
     "rollup": "^2.7.6",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-cleanup": "^3.1.1",
@@ -42,5 +44,8 @@
   "peerDependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "emotion": "^10.0.27"
   }
 }
