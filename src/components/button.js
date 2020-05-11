@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import React, { useContext } from 'react'
-import { createUseStyles } from 'react-jss'
+import { css, jsx } from '@emotion/core'
 import ThemeContext, { isColor } from '../theme'
 /*
   Button
@@ -16,29 +17,39 @@ import ThemeContext, { isColor } from '../theme'
       */
 const Button = ({ children, onClick, ...args }) => {
   const theme = useContext(ThemeContext)
-
-  let color;
-  for(let arg in args) {
+  let colorTheme;
+  let borderRadius = "2px";
+  for (let arg in args) {
     if (isColor(arg)) {
-      color = theme[arg];
+      colorTheme = theme.themes[arg];
+    } else if (['left', 'right', 'middle'].includes(arg)) {
+      console.log(children, arg)
+      switch(arg) {
+        case 'middle': borderRadius = "0"
+          break;
+        case 'left': borderRadius = "2px 0px 0px 2px"
+          break;
+        case 'right': borderRadius = "0px 2px 2px 0px"
+          break;
+        default:break;
+      }
     }
   }
 
-  if(!color) color = theme.primary;
+  if (!colorTheme) colorTheme = theme.themes.default;
 
-  const classes = createUseStyles({
-    button: {
-      color: theme.accent,
-      backgroundColor: color,
+  const styles = css({
+      color: colorTheme.text,
+      backgroundColor: colorTheme.element,
       display: "inline-block",
       border: "none",
-      borderRadius: "2px",
+      borderRadius: borderRadius,
       '&:hover': {
-        filter: "saturate(1.2)"
+        filter: "brightness(1.2)"
       }
-    }
-  })()
-  return <button className={classes.button} onClick={onClick}>{children}</button>
+  })
+
+  return <button css={styles} onClick={onClick}>{children}</button>
 }
 
 export default Button
